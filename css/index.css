@@ -1,0 +1,16 @@
+.term{
+	margin: 15px 0 15px 0px;
+	position: relative;
+	 display: none;
+}
+.authentication{
+	font-size: 200%
+}
+.cursor{
+  visibility: inherit;
+}
+body{
+	font-size: 20px;
+	background-color: #071D21;
+	color: #FFEFE2;
+}
