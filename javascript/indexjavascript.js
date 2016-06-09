@@ -1,3 +1,4 @@
+var glob_c= 1
 var showText = function (target, message, curr_index, interval,cb) {   
 
 	if (curr_index < message.length) {
@@ -59,13 +60,21 @@ var is_valid_cmd = function(command){
 }
 var run_cmd = function(command){
 	if(command ==="help")
-		return "Supported commands include help,ls,echo "
+		return "Supported commands include help,ls,echo fdsafdsafdsafdsafsdafsdafdsafd "
 }
 var print_to_shell = function(text,target){
-	var result_div = document.createElement("div")
-	result_div.class="col-sm-12"
-	result_div.innerHtml = text
-	$("#term").append(text)
+
+	var result_row = document.createElement("div")
+	result_row.className="row"
+
+	var result_col =document.createElement("div")
+	result_col.className="col-sm-12"
+	result_col.innerHTML = text
+	result_row.appendChild(result_col)
+	$("#term").append(result_row)
+}
+var freeze_prev_command =function(command){
+	document.getElementById("command"+glob_c).readOnly = true
 }
 var command_driver = function(target){
 	 $(target).keypress(function(e){
@@ -74,15 +83,17 @@ var command_driver = function(target){
       		if(is_valid_cmd(cmd_value)){
 				var result = run_cmd(cmd_value)
 				print_to_shell(result,target)       			
-				alert(result)
+				
       		}else{
-      			alert(cmd_value +" is not a valid command")
+
+      			print_to_shell(cmd_value +" is not a valid command")
       		}
+      		freeze_prev_command(cmd_value)
       }
     });
 }
 $(document).ready(function(){
-   command_driver('#command')
+   command_driver('#command1')
 });
 $(document).ready(driver())
 
