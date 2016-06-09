@@ -9,6 +9,11 @@
 	background: #015E6D;
 	text-align: left;
 }
+.cmd_box{
+	width:100%;
+
+}
+
 .cursor{
 	visibility: inherit;
 }
@@ -32,13 +37,13 @@ input{
 @media (min-width: 768px) {
 	/*Small*/
 	.authentication{
-		font-size: 60px;
+		font-size: 50px;
 	}
 	.term{
 		border: 6px solid #a1a1a1;
 		border-radius: 20px;
 		padding: 0 0 30% 0;
-		font-size: 35px
+		font-size: 25px
 	}
 
 }
@@ -56,10 +61,10 @@ input{
 
 		border: 2px solid #a1a1a1;
 		border-radius: 10px;
-		font-size: 20px;
+		font-size: 27px;
 	}
 	.authentication{
-		font-size: 35px;
+		font-size: 54px;
 	}
 }
 @media (max-width: 767px) {

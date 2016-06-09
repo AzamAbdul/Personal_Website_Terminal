@@ -61,18 +61,28 @@ var run_cmd = function(command){
 	if(command ==="help")
 		return "Supported commands include help,ls,echo "
 }
-$(document).ready(function(){
-    $('#command').keypress(function(e){
+var print_to_shell = function(text,target){
+	var result_div = document.createElement("div")
+	result_div.class="col-sm-12"
+	result_div.innerHtml = text
+	$("#term").append(text)
+}
+var command_driver = function(target){
+	 $(target).keypress(function(e){
       if(e.keyCode==13){
-      		var cmd_value = $('#command').val();
+      		var cmd_value = $(target).val();
       		if(is_valid_cmd(cmd_value)){
-				var result = run_cmd(cmd_value)       			
+				var result = run_cmd(cmd_value)
+				print_to_shell(result,target)       			
 				alert(result)
       		}else{
       			alert(cmd_value +" is not a valid command")
       		}
       }
     });
+}
+$(document).ready(function(){
+   command_driver('#command')
 });
 $(document).ready(driver())
 
