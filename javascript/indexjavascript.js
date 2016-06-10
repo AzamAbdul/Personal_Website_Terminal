@@ -18,7 +18,7 @@ var check_enter= function(){
 			$("authentication").hide();
 			$('.term').show();
 			$('.term').addClass('animated slideInUp')
-			
+			$('#command1').focus()
 
 		
 	
@@ -58,9 +58,24 @@ var driver = function(){
 var is_valid_cmd = function(command){
 	return command ==="help" || command ==="ls"
 }
+var clear_term = function(){
+	$("#term").empty()
+}
 var run_cmd = function(command){
-	if(command ==="help")
-		return "Supported commands include help,ls,echo fdsafdsafdsafdsafsdafsdafdsafd "
+	if(command ==="help"){
+		print_to_shell( "Supported commands include help,ls,echo")
+		return true
+	}else if(command==="ls"){
+		print_to_shell("./build_nav.sh")
+		return true
+	}else if(command==="clear"){
+		clear_term()
+		return false
+	}else{
+		print_to_shell(command + " is not a recognized command")   
+		return true
+	}
+
 }
 var print_to_shell = function(text,target){
 
@@ -76,19 +91,40 @@ var print_to_shell = function(text,target){
 var freeze_prev_command =function(command){
 	document.getElementById("command"+glob_c).readOnly = true
 }
+var add_cmd_line = function(){
+	
+	var result_row = document.createElement("div")
+	result_row.className="row"
+	
+	var user_col = document.createElement("div")
+	user_col.className= "col-sm-2" 
+	user_col.innerHTML ="user:~$"
+	
+	result_row.appendChild(user_col)
+	
+	var cmd_col = document.createElement("div")
+	cmd_col.className = "col-sm-10"
+	var cmd_in = document.createElement("input")
+	cmd_in.className="cmd_box"
+	glob_c  = glob_c +1
+	cmd_in.id="command"+glob_c
+	cmd_col.appendChild(cmd_in)
+
+	result_row.appendChild(cmd_col)
+
+	$("#term").append(result_row)
+	$("#command"+glob_c).focus();
+
+}
 var command_driver = function(target){
 	 $(target).keypress(function(e){
       if(e.keyCode==13){
       		var cmd_value = $(target).val();
-      		if(is_valid_cmd(cmd_value)){
-				var result = run_cmd(cmd_value)
-				print_to_shell(result,target)       			
-				
-      		}else{
-
-      			print_to_shell(cmd_value +" is not a valid command")
-      		}
-      		freeze_prev_command(cmd_value)
+      		var not_clear = run_cmd(cmd_value)
+      		if(not_clear)
+      			freeze_prev_command(cmd_value)
+      		add_cmd_line()
+      		command_driver("#command"+glob_c)
       }
     });
 }
