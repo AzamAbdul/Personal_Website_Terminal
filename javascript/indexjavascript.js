@@ -54,6 +54,12 @@ var driver = function(){
 
 
 }
+var show_social = function()
+{
+	$('#social').addClass('animated tada')
+	$("#social").show();
+
+}
 var is_valid_cmd = function(command){
 	return command ==="help" || command ==="ls"
 }
@@ -69,13 +75,15 @@ var run_cmd = function(command){
 		print_to_shell( "Supported commands include help,ls,echo",false)
 		return true
 	}else if(command==="ls"){
-		print_to_shell("./build_nav.sh", true)
+		print_to_shell("./build_nav.sh ./social.sh", true)
 		return true
 	}else if(command==="clear"){
 		clear_term()
 		return false
-	}
-	else if(command=="./build_nav.sh"){
+	}else if(command=="./social.sh"){
+		show_social()
+		return false;
+	}else if(command=="./build_nav.sh"){
 		build_nav();
 		return false;
 	}else{
