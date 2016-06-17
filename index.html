@@ -2,28 +2,72 @@
 <link rel="stylesheet" type="text/css" href="css/animate.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
-
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="javascript/indexjavascript.js"></script>
 <script type="text/javascript" src="javascript/jquery-1.12.4.js"></script>
 <body>
 
 	<div class="container">
+		<div id="topbar" class="topbar">
+
+			<ul class="navigator">
+
+				<li class="home"><a href="/home/azam/Documents/Personal_Website/index.html"><img src="/home/azam/Documents/Personal_Website/images/home.jpg"height="30" width="42" style="position: relative; top:10px; left:15px;"> Home</a></li>
+
+				<li ><a href ="http://github.com/azamabdul"><img src="/home/azam/Documents/Personal_Website/images/pencil.jpg"height="30" width="35" style="position: relative; top:12px;">Projects</a></li>
+
+
+				<li class ="farright"><a href="/home/azam/Documents/Personal_Website/about_me.html"><img src="/home/azam/Documents/Personal_Website/images/stick.jpg"height="25" width="25" style="position: relative; top:2px;">About Me</a></li>
+
+
+
+			</ul>
+
+		</div>
 		<div class="row">
 
 			<div id="authentication" class=" authentication col-xs-12 col-sm-12 col-md-12 lead"></div>
 		</div>
 
 		<div class="row">
-			<div  id="term" class="term col-xs-8 col-sm-8 col-md-6 col-s-offset-2 col-xs-offset-2 col-md-offset-3" >
-				<div class="row">
-					<div class ="col-sm-2 " >
-						user:~$
-					</div>
-					<div class="col-sm-10">
-						<INPUT id="command1" class="cmd_box"> 
+			
+			<div class="row">
+				<div  id="term" class="term col-xs-8 col-sm-10 col-md-6 col-sm-offset-1 col-xs-offset-2 col-md-offset-3" >
+					<div  id="window_pane" class="row window_pane">
+						<div class="col-sm-3 col-md-2 ">
+							<div id="lights">
+								<div class="light red">
+									<div class="glyph">×</div>
+									<div class="shine"></div>
+									<div class="glow"></div>
+								</div>
+								<div class="light yellow">
+									<div class="glyph">-</div>
+									<div class="shine"></div>
+									<div class="glow"></div>
+								</div>
+								<div class="light green">
+									<div class="glyph">+</div>
+									<div class="shine"></div>
+									<div class="glow"></div>
+								</div>
+							</div>
+						</div> 
 
+					</div>
+					<div id="term_body" class="term_body">
+						<div class="row ">
+							<div class ="col-sm-3 col-md-2 " >
+								user:~$
+							</div>
+							<div class="col-sm-9 col-md-10">
+								<INPUT id="command1" class="cmd_box"> 
+
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</body>
+		</body>

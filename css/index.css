@@ -4,32 +4,120 @@
 	position: relative;
 	display: none;
 	border: 2px solid #a1a1a1;
-	border-radius: 10px;
+	border-radius: 5px;
 	border-color: white;
-	background: #015E6D;
+	background: #263238;
 	text-align: left;
+	height: 350px;
+	color: white;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px #111111;
 }
-.cmd_box{
-	width:100%;
+
+.term_body{
+	height:100%;
+	 overflow-y:auto;
+	 overflow-x:hidden;
+}
+.window_pane{
+	height: 20px;
+	background-color: #91B9D1; 
 
 }
+.light .glow {
+    width: 14px;
+    height: 8px;
+    background-image: -webkit-gradient(radial,center bottom,0,center center,5,from(rgba(255,255,255,0.75)),to(rgba(255,255,255,0)));
+    background: 0px 0px -moz-radial-gradient(bottom,cover,rgba(255,255,255,0.70) 0%,rgba(255,255,255,0) 80%);
+}
+.red {
+    background: #f41b16;
+    background: -moz-linear-gradient(top,#f41b16 0%,#fc7471 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#f41b16),color-stop(100%,#fc7471));
+    background: -webkit-linear-gradient(top,#f41b16 0%,#fc7471 100%);
+    background: -o-linear-gradient(top,#f41b16 0%,#fc7471 100%);
+    background: -ms-linear-gradient(top,#f41b16 0%,#fc7471 100%);
+    background: linear-gradient(top,#f41b16 0%,#fc7471 100%);
+    margin: 2px 0px;
+}
+.yellow {
+    background: #f4a316;
+    background: -moz-linear-gradient(left,#f4a316 0%,#fcc371 100%);
+    background: -webkit-gradient(linear,left top,right top,color-stop(0%,#f4a316),color-stop(100%,#fcc371));
+    background: -webkit-linear-gradient(left,#f4a316 0%,#fcc371 100%);
+    background: -o-linear-gradient(left,#f4a316 0%,#fcc371 100%);
+    background: -ms-linear-gradient(left,#f4a316 0%,#fcc371 100%);
+    background: linear-gradient(left,#f4a316 0%,#fcc371 100%);
+    margin: 2px 7px;
+}
+.green {
+    background: #4cae2e;
+    background: -moz-linear-gradient(top,#4cae2e 0%,#dafc71 100%);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#4cae2e),color-stop(100%,#dafc71));
+    background: -webkit-linear-gradient(top,#4cae2e 0%,#dafc71 100%);
+    background: -o-linear-gradient(top,#4cae2e 0%,#dafc71 100%);
+    background: -ms-linear-gradient(top,#4cae2e 0%,#dafc71 100%);
+    background: linear-gradient(top,#4cae2e 0%,#dafc71 100%);
+    margin: 2px 0px;
+}
+.light {
+    float: left;
+    width: 14px;
+    height: 14px;
+    border-radius: 14px;
+    -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
+    -moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
+    box-shadow: 0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
+    overflow: hidden;
+}
+.light .shine {
+    width: 4px;
+    height: 3px;
+    border-radius: 10px;
+    background: -moz-radial-gradient(center,ellipse cover,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background-image: -webkit-gradient(radial,center center,0px,center center,100%,color-stop(0%,rgba(255,255,255,1)),color-stop(100%,rgba(255,255,255,0)));
+    background: -webkit-radial-gradient(center,ellipse cover,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: -o-radial-gradient(center,ellipse cover,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: -ms-radial-gradient(center,ellipse cover,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+    background: radial-gradient(center,ellipse cover,rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+}
+.red .glyph {
+    position: relative;
+    top: -5px;
+    left: 3px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #9b3a36;
+    z-index: 50;
+    opacity: 0;
+}
+.red .shine {
+    position: relative;
+    top: -21px;
+    left: 5px;
+}
+
+
 
 .cursor{
 	visibility: inherit;
 }
+.authentication{
+	margin: 4% 0px;
+}
 body{
-
-	background-color: #071D21;
-	color: #FFEFE2;
+	font-family: 'Lato',sans-serif;
+	background-color: #ffffff;
+	color: #000000;
 	text-align: center;
 }
 td{
-	background-color: #071D21;
-	color: #FFEFE2;
+	background-color: #263238;
+	color: #000000;
 }
 
 input{
-	background: #015E6D;
+	background: #263238;
 	color: #FFEFE2;
 	border: none;
 	outline: none;
@@ -38,36 +126,134 @@ input{
 	/*Small*/
 	.authentication{
 		font-size: 50px;
+		margin: 10% 0px;
 	}
 	.term{
 		border: 6px solid #a1a1a1;
-		border-radius: 20px;
-		padding: 0 0 30% 0;
-		font-size: 25px
+		border-radius: 5px;
+		padding: 0 0 2% 0;
+		font-size: 44px;
+		height: 400px;
 	}
 
 }
 @media (min-width: 992px) { 
 	/*medium*/
-
+	.authentication{
+		font-size: 50px;
+		
+	}
+	.term{
+		border-radius: 5px;
+		font-size: 24px;
+	}
 }
 
 @media (min-width: 1200px) {
 	/*large*/
 	.term{
 
-		padding: 0 0 5% 0;
-
-
+		padding: 0 0 2% 0;
 		border: 2px solid #a1a1a1;
-		border-radius: 10px;
+		border-radius: 5px;
 		font-size: 27px;
 	}
 	.authentication{
-		font-size: 54px;
+		font-size: 30px;
+		margin: 6% 0px;
 	}
 }
 @media (max-width: 767px) {
 	/*extra small*/
 	
+}
+@-webkit-keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(0); 
+    } 
+} 
+
+@keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+-o-@keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+-moz-@keyframes fadeInDown { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(-20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+.executable{
+	color:#B95300;
+}
+.topbar{
+
+	-webkit-animation-duration: 2s; 
+	-moz-animation-duration:2s;
+	-o-animation:2s;
+    animation-duration: 2s; 
+
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+
+	-webkit-animation-name: fadeInDown; 
+	-o-animation-name:fadeInDown;
+	-moz-animation-name:fadeInDown;
+    animation-name: fadeInDown; 
+    
+    display: none;
+	background: #DA635D;
+	position: fixed;
+	border: 5px outset #DA635D;
+	top:0px;
+	left:0px;
+	width: 100%;
+	height: 60px;
+	z-index: 1;
+	padding: 0px;
+	margin: 0px;
+    white-space: nowrap;  
+}
+li{
+    position: relative;
+    top: 15px;
+	display: inline;
+    width:48%;
+    padding: 0 1%;
+}
+
+
+a{
+	color: rgba(255,255,255,0.8);
+	text-decoration: none;
+	font-size:20px;
+	font-weight: 700;
+
 }

@@ -59,34 +59,47 @@ var is_valid_cmd = function(command){
 	return command ==="help" || command ==="ls"
 }
 var clear_term = function(){
-	$("#term").empty()
+	$('#term_body').empty()
+
+}
+var build_nav = function(){
+	$("#topbar").show()
 }
 var run_cmd = function(command){
 	if(command ==="help"){
-		print_to_shell( "Supported commands include help,ls,echo")
+		print_to_shell( "Supported commands include help,ls,echo",false)
 		return true
 	}else if(command==="ls"){
-		print_to_shell("./build_nav.sh")
+		print_to_shell("./build_nav.sh", true)
 		return true
 	}else if(command==="clear"){
 		clear_term()
 		return false
+	}
+	else if(command=="./build_nav.sh"){
+		build_nav();
+		return false;
 	}else{
 		print_to_shell(command + " is not a recognized command")   
 		return true
 	}
 
 }
-var print_to_shell = function(text,target){
+var print_to_shell = function(text,is_executable){
 
 	var result_row = document.createElement("div")
 	result_row.className="row"
 
 	var result_col =document.createElement("div")
 	result_col.className="col-sm-12"
+	if(is_executable){
+		
+		result_col.classList.add("executable");
+	}
 	result_col.innerHTML = text
 	result_row.appendChild(result_col)
-	$("#term").append(result_row)
+	
+	$("#term_body").append(result_row)
 }
 var freeze_prev_command =function(command){
 	document.getElementById("command"+glob_c).readOnly = true
@@ -97,13 +110,15 @@ var add_cmd_line = function(){
 	result_row.className="row"
 	
 	var user_col = document.createElement("div")
-	user_col.className= "col-sm-2" 
+	user_col.className= "col-sm-3" 
+	user_col.classList.add("col-md-2")
 	user_col.innerHTML ="user:~$"
 	
 	result_row.appendChild(user_col)
 	
 	var cmd_col = document.createElement("div")
-	cmd_col.className = "col-sm-10"
+	cmd_col.className = "col-sm-9"
+	cmd_col.classList.add("col-md-10")
 	var cmd_in = document.createElement("input")
 	cmd_in.className="cmd_box"
 	glob_c  = glob_c +1
@@ -112,7 +127,7 @@ var add_cmd_line = function(){
 
 	result_row.appendChild(cmd_col)
 
-	$("#term").append(result_row)
+	$("#term_body").append(result_row)
 	$("#command"+glob_c).focus();
 
 }
