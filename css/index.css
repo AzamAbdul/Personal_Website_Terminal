@@ -96,14 +96,15 @@
     top: -21px;
     left: 5px;
 }
-
-
+.skip_text{
+	display: none;
+}
 
 .cursor{
 	visibility: inherit;
 }
 .authentication{
-	margin: 4% 0px;
+	margin: 4% 0px 0px 0px;
 }
 body{
 	font-family: 'Lato',sans-serif;
@@ -126,7 +127,10 @@ input{
 	/*Small*/
 	.authentication{
 		font-size: 50px;
-		margin: 10% 0px;
+		margin: 10% 0px 5% 0px;
+	}
+	.skip_text{
+		font-size: 40px;	
 	}
 	.term{
 		border: 6px solid #a1a1a1;
@@ -151,6 +155,15 @@ input{
 
 @media (min-width: 1200px) {
 	/*large*/
+	.authentication{
+		font-size: 30px;
+		margin: 6% 0px 1.5%  0px;
+	}
+	.skip_text{
+		font-size: 22px;
+		margin: 2% 0 ;	
+	}
+
 	.term{
 
 		padding: 0 0 2% 0;
@@ -158,10 +171,8 @@ input{
 		border-radius: 5px;
 		font-size: 27px;
 	}
-	.authentication{
-		font-size: 30px;
-		margin: 6% 0px;
-	}
+
+	
 }
 @media (max-width: 767px) {
 	/*extra small*/

@@ -15,13 +15,12 @@ var showText = function (target, message, curr_index, interval,cb) {
 	}
 }
 var check_enter= function(){
-			$("authentication").hide();
+
 			$('.term').show();
 			$('.term').addClass('animated slideInUp')
+			$("#skip_text").show();
+			$('#skip_text').addClass('animated slideInUp')
 			$('#command1').focus()
-
-		
-	
 
 }
 var blink = function(element,check){
