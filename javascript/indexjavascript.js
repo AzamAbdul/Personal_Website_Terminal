@@ -1,4 +1,7 @@
 var glob_c= 1
+var prev_cmds = ["blah"]
+var offset =0
+prev_cmds.length =0
 var showText = function (target, message, curr_index, interval,cb) {   
 
 	if (curr_index < message.length) {
@@ -148,15 +151,33 @@ var add_cmd_line = function(){
 
 }
 var command_driver = function(target){
-	 $(target).keypress(function(e){
+	 $(target).keydown(function(e){
       if(e.keyCode==13){
       		var cmd_value = $(target).val();
+
       		var not_clear = run_cmd(cmd_value)
       		if(not_clear)
       			freeze_prev_command(cmd_value)
       		add_cmd_line()
       		command_driver("#command"+glob_c)
-      }
+      		prev_cmds.push(cmd_value)
+      		offset =0
+      }else if(e.keyCode==38){
+      	if(glob_c != 1){
+      
+      		      	$(target).val( prev_cmds[glob_c - 2-offset])
+      		      	if(glob_c-(2+offset )>=0)
+      		      		offset = offset+1
+      	}
+
+      }else if(e.keyCode==40)
+      	if(glob_c != 1){
+      				if(glob_c-(2+offset )<prev_cmds.length)
+      		      		offset = offset-1
+      		      	$(target).val( prev_cmds[glob_c - 2-offset])
+      		      	
+      	}
+
     });
 }
 $(document).ready(function(){
