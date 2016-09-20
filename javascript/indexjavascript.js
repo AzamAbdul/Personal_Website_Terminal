@@ -19,7 +19,7 @@ var showText = function (target, message, curr_index, interval,cb) {
 }
 /* Set the width of the side navigation to 250px */
 function openNav() {
-    document.getElementById("mySidenav").style.width = "200px";
+    $('#nav').show()
 }
 
 /* Set the width of the side navigation to 0 */
@@ -81,6 +81,11 @@ var clear_term = function(){
 }
 var build_nav = function(){
 	openNav()
+}
+
+var skip = function(){
+	show_social()
+	build_nav()
 }
 var run_cmd = function(command){
 	if(command ==="help"){
